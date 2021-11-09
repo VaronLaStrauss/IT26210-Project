@@ -6,16 +6,6 @@ import json
 main_api = "https://open.mapquestapi.com/directions/v2/alternateroutes?"
 key = "zTPMdKRWp9kgYVPLVPtGUGfNHhu2dmUY"
 
-def test_api_status_matcher() -> bool:
-    status = 402
-    assert api_status_matcher(status) == False
-    status = 611
-    assert api_status_matcher(status) == False
-    status = 0
-    assert api_status_matcher(status) == True
-    status = "any"
-    assert api_status_matcher(status) == False
-
 def get_route(origin: str, destination: str, number_of_routes: int) -> any:
     url = main_api + urllib.parse.urlencode({"key": key, "from": origin, "to": destination, "maxRoutes": number_of_routes})
     print(url)
