@@ -23,4 +23,4 @@ jobs:
           pylint `ls -R|grep .py$|xargs`
       - name: Pytest
         run: |
-          python -m py.test
+          pytest
