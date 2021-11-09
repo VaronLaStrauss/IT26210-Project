@@ -21,6 +21,5 @@ jobs:
       - name: Analysing the code with pylint
         run: |
           pylint `ls -R|grep .py$|xargs`
-      - name: Pytest
-        run: |
-          pytest
+      - name: Run unit tests
+        run: python -m pytest
